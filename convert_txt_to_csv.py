@@ -19,12 +19,12 @@ def name_convert(orig_file_loc, dest_file_loc):
     for text_file in os.listdir(f'{orig_file_loc}'):
         file_name = find.search(text_file).group()
 
-        if file_name == None:
+        if file_name is None:
             continue
 
-        shutil.copy(f'{full_orig_loc}/{file_name}.us.txt', 
+        shutil.copy(f'{full_orig_loc}/{file_name}.us.txt',
                     f'{full_dest_loc}/{file_name}.csv')
         counter += 1
 
-
-    print(f'Copied and reformatted {counter} .txt files to .csv from {working_dir}/{orig_file_loc} to {working_dir}/{dest_file_loc}')
+    print(f'Copied and reformatted {counter} .txt files to .csv from ' +
+            f'{working_dir}/{orig_file_loc} to {working_dir}/{dest_file_loc}')
