@@ -19,7 +19,7 @@ def name_convert(orig_file_loc, dest_file_loc):
     for text_file in os.listdir(f'{orig_file_loc}'):
         file_name = find.search(text_file).group()
 
-        if file_name == None:
+        if file_name is None:
             continue
 
         shutil.copy(f'{full_orig_loc}/{file_name}.us.txt', 
