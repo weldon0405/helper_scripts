@@ -22,9 +22,10 @@ def name_convert(orig_file_loc, dest_file_loc):
         if file_name is None:
             continue
 
-        shutil.copy(f'{full_orig_loc}/{file_name}.us.txt', 
-                    f'{full_dest_loc}/{file_name}.csv')
+        orig_path = f'{full_orig_loc}/{file_name}.us.txt'
+        dest_path = f'{full_dest_loc}/{file_name}.csv'
+
+        shutil.copy(orig_path, dest_path)
         counter += 1
 
-
-    print(f'Copied and reformatted {counter} .txt files to .csv from {working_dir}/{orig_file_loc} to {working_dir}/{dest_file_loc}')
+    print(f'Formatted {counter} .txt to .csv from {orig_path} to {dest_path}')
